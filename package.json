@@ -1,0 +1,32 @@
+{
+  "name": "ce2portfolio",
+  "version": "1.0.0",
+  "description": "CE2 Portfolio",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal_user2:cealcuadrado/ce2portfolio.git"
+  },
+  "author": "cealcuadrado@outlook.com",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-express": "^1.4.1",
+    "grunt-htmlhint": "^0.9.13",
+    "grunt-open": "^0.2.4",
+    "grunt-parallel": "^0.5.1",
+    "grunt-stylelint": "^0.12.0",
+    "load-grunt-tasks": "^5.1.0",
+    "stylelint": "^12.0.0"
+  }
+}
