@@ -13,6 +13,14 @@
   },
   "author": "cealcuadrado@outlook.com",
   "license": "ISC",
+  "dependencies": {
+    "open": ">=7.0.0",
+    "base64-url": ">=2.3.2",
+    "morgan": ">=1.9.1",
+    "negotiator": ">=0.6.2",
+    "fresh": ">=0.5.2",
+    "mime": ">=2.4.4"
+  },
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-contrib-cssmin": "^3.0.0",
