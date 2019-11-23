@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="app">
 <head>
     <title>My Title</title>
     <meta charset="UTF-8"/>
@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/main.min.css"/>
 </head>
 <body>
-    <h1>Hola, mundo!</h1>
+    <ui-view></ui-view>
+
+    <script src="js/libs.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

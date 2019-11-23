@@ -1,5 +1,7 @@
-@import 'helpers';
-
-body {
-    font-family: $default-font;
-}
+@import 'abstracts/variables';
+@import 'base/typography';
+@import 'base/helpers';
+@import 'base/general';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'pages/home';

@@ -2,6 +2,7 @@ module.exports = function(grunt){
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         htmlhint: {
             all: ['src/**/*.html']
         },
@@ -37,6 +38,16 @@ module.exports = function(grunt){
                 dest: 'dist/index.html'
             }
         },
+        ngtemplates: {
+            app: {
+                cwd: 'src/app',
+                src: 'views/**/*.html',
+                dest:'src/app.templates.js',
+                options: {
+                    htmlmin: '<%= htmlmin.options %>'
+                }
+            }
+        },
         sass: {
             options: {
                 style: 'expanded'
@@ -63,15 +74,38 @@ module.exports = function(grunt){
         uglify: {
             options: {
                 compress: true,
-                removeComments: true
+                removeComments: true,
+                mangle: {
+                    reserved: [
+                        '$stateProvider',
+                        '$urlRouterProvider'
+                    ]
+                }
             },
             libs: {
-                src: [],
+                src: [
+                    'node_modules/angular/angular.js',
+                    'node_modules/angular-animate/angular-animate.js',
+                    'node_modules/angular-touch/angular-touch.js',
+                    'node_modules/@uirouter/angularjs/release/angular-ui-router.js'
+                ],
                 dest: 'dist/js/libs.js'
             },
-            src: {
-                src: [],
+            dist: {
+                src: ['src/**/*.js'],
                 dest: 'dist/app.js'
+            }
+        },
+        imagemin: {
+            dist: {
+                optimizationLevel: 3,
+                progressive: true,
+                files: [{
+                    expand: true,
+                    cwd: 'src/img',
+                    src: '**/*.{png,jpg,gif}',
+                    dest:'dist/img'
+                }]
             }
         },
         express: {
@@ -101,10 +135,12 @@ module.exports = function(grunt){
                     'htmlhint',
                     'jshint',
                     'htmlmin',
+                    'ngtemplates',
                     'stylelint:sass',
                     'sass:dist',
                     'stylelint:css',
                     'cssmin:dist',
+                    'uglify:dist',
                     'express',
                     'open',
                     'watch'
@@ -114,7 +150,8 @@ module.exports = function(grunt){
                 files: ['src/**/*.html'],
                 tasks: [
                     'htmlhint',
-                    'htmlmin'
+                    'htmlmin',
+                    'ngtemplates'
                 ]
             },
             sass: {
@@ -140,10 +177,13 @@ module.exports = function(grunt){
         'htmlhint',
         'jshint',
         'htmlmin',
+        'ngtemplates',
         'stylelint:sass',
         'sass:dist',
         'stylelint:css',
         'cssmin:dist',
+        'uglify',
+        'imagemin',
         'express',
         'open',
         'watch'
