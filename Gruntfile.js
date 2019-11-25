@@ -9,7 +9,7 @@ module.exports = function(grunt){
         stylelint: {
             options: {
                 configFile: 'etc/.stylelintrc',
-                failOnError: true 
+                failOnError: true
             },
             sass: {
                 all: ['src/**/*.scss']
@@ -73,8 +73,9 @@ module.exports = function(grunt){
         },
         uglify: {
             options: {
-                compress: true,
-                removeComments: true,
+                compress: {
+                    dead_code: true
+                },
                 mangle: {
                     reserved: [
                         '$stateProvider',

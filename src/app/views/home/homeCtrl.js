@@ -3,12 +3,12 @@
         .module('app')
         .controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = ['$scope'];
+    homeCtrl.$inject = ['$scope', 'defaultConstants', 'dateFactory'];
 
-    function homeCtrl($scope){
+    function homeCtrl($scope, defaultConstants, dateFactory){
         var vm = this;
-        vm.title = 'CeAlCuadrado Networks';
+        vm.title = defaultConstants.title;
 
-        vm.currentDate = new Date();
+        vm.currentYear = dateFactory.getFullYear();
     }
 })();
