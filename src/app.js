@@ -15,5 +15,5 @@
         $stateProvider.state(homeState);
 
         $urlRouterProvider.otherwise('/home');
-    });
+    });    
 })();

@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<div ng-controller="homeCtrl as vm">
+<div ng-controller="homeCtrl as vm" class="home">
     <header>
+        <img ng-src="{{vm.mainImg}}"/>
         <h1>{{vm.title}}</h1>
     </header>
 
     <main>
-        <p>Este es el contenido de la parte principal</p>
+        <section class="blogs">
+            <a ng-repeat="blog in vm.blogs" class="blog" ng-href="{{blog.url}}" target="_blank">
+                <div class="container">
+                    <img ng-src="{{blog.imgSrc}}"/>
+                    <div class="description">
+                        <h2>
+                            {{blog.title}}<br/>
+                            <small>{{blog.subtitle}}</small>
+                        </h2>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <section class="social">
+            <div class="social-networks">
+                <a ng-repeat="social in vm.socials" ng-href="{{social.url}}">
+                    <i class="fab fa-2x" ng-class="social.icon"></i>
+                </a>
+            </div>
+            <div class="stack-exchange">
+                <a href="https://stackexchange.com/users/6440637"><img src="https://stackexchange.com/users/flair/6440637.png" width="208" height="58" alt="profile for CeAlCuadrado on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for CeAlCuadrado on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
+            </div>
+        </section>
+        
+        <section class="gaming">
+            <strong>{{vm.gaming.name}}</strong>: {{vm.gaming.gamingId}}
+        </section>
     </main>
 
     <footer>
-        &#169; {{vm.currentYear}} CeAlCuadrado
+        <div class="mail-contact">
+            <i class="fas fa-envelope fa-fw"></i> {{vm.email}}
+        </div>
+        <div class="copyright">
+            &#169; {{vm.currentYear}} {{vm.name}}
+        </div>
+        
     </footer>
 </div>

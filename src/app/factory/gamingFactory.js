@@ -7,15 +7,12 @@
         var gamingObj = {};
 
         gamingObj.getGaming = function(){
-            var gamings = [
-                {
-                    id:1,
-                    name: 'Nintendo Switch',
-                    gameId:'ID'
-                }
-            ];
+            var gaming = {
+                name: 'Nintendo Switch',
+                gamingId: 'SW-0809-3953-6196'
+            };
 
-            return gamings;
+            return gaming;
         };
 
         return gamingObj;
