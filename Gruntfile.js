@@ -24,12 +24,19 @@ module.exports = function(grunt){
             all: ['src/**/*.js']
         },
         copy: {
-            fonts: {
+            dist: {
                 expand: true,
                 flatten: true,
                 filter:'isFile',
                 src: ['src/fonts/**'],
                 dest:'dist/fonts'
+            },
+            release: {
+                expand: true,
+                flatten: true,
+                filter:'isFile',
+                src:['src/fonts/**'],
+                dest:'release/fonts'
             }
         },
         htmlmin: {
@@ -47,6 +54,10 @@ module.exports = function(grunt){
             dist: {
                 src: 'src/index.html',
                 dest: 'dist/index.html'
+            },
+            release: {
+                src: 'src/index.html',
+                dest:'release/index.html'
             }
         },
         ngtemplates: {
@@ -222,8 +233,8 @@ module.exports = function(grunt){
     grunt.registerTask('serve', [
         'htmlhint',
         'jshint',
-        'copy',
-        'htmlmin',
+        'copy:dist',
+        'htmlmin:dist',
         'ngtemplates',
         'stylelint:sass',
         'sass:dist',
@@ -232,7 +243,7 @@ module.exports = function(grunt){
         'cssmin:dist',
         'uglify:distLibs',
         'uglify:dist',
-        'imagemin',
+        'imagemin:dist',
         'express',
         'open',
         'watch'
@@ -241,8 +252,8 @@ module.exports = function(grunt){
     grunt.registerTask('release', [
         'htmlhint',
         'jshint',
-        'copy',
-        'htmlmin',
+        'copy:release',
+        'htmlmin:release',
         'ngtemplates',
         'stylelint:sass',
         'sass:dist',
@@ -251,6 +262,6 @@ module.exports = function(grunt){
         'cssmin:release',
         'uglify:releaseLibs',
         'uglify:release',
-        'imagemin',
+        'imagemin:release',
     ]);
 };
