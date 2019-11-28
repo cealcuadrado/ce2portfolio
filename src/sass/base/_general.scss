@@ -6,4 +6,10 @@
 
 body {
     padding: 1rem;
+    font-family: $default-font;
+
+    background-image: linear-gradient(to right bottom, lighten($base-color, 40%), lighten($base-color, 90%), lighten($base-color, 40%));
+    background-attachment: fixed;
+
 }
+

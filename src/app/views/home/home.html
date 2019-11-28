@@ -22,7 +22,7 @@
 
         <section class="social">
             <div class="social-networks">
-                <a ng-repeat="social in vm.socials" ng-href="{{social.url}}">
+                <a ng-repeat="social in vm.socials" ng-href="{{social.url}}" title="{{social.title}}">
                     <i class="fab fa-2x" ng-class="social.icon"></i>
                 </a>
             </div>

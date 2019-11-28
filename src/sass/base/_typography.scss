@@ -1,3 +1,7 @@
-body {
-    font-family: $default-font;
+@font-face {
+    font-family: 'Avenir LTS TD';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirLTStd-Book.woff2') format('woff2'),
+         url('../fonts/AvenirLTStd-Book.woff') format('woff');
 }

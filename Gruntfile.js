@@ -23,6 +23,15 @@ module.exports = function(grunt){
         jshint: {
             all: ['src/**/*.js']
         },
+        copy: {
+            fonts: {
+                expand: true,
+                flatten: true,
+                filter:'isFile',
+                src: ['src/fonts/**'],
+                dest:'dist/fonts'
+            }
+        },
         htmlmin: {
             options: {
                 compress: true,
@@ -213,6 +222,7 @@ module.exports = function(grunt){
     grunt.registerTask('serve', [
         'htmlhint',
         'jshint',
+        'copy',
         'htmlmin',
         'ngtemplates',
         'stylelint:sass',
@@ -231,6 +241,7 @@ module.exports = function(grunt){
     grunt.registerTask('release', [
         'htmlhint',
         'jshint',
+        'copy',
         'htmlmin',
         'ngtemplates',
         'stylelint:sass',
