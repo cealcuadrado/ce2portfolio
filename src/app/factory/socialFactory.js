@@ -24,6 +24,11 @@
                     icon: 'fa-soundcloud'
                 },
                 {
+                    title:'Flickr',
+                    url: 'https://www.flickr.com/photos/31976340@N08/',
+                    icon:'fa-flickr'
+                },
+                {
                     title: 'GitHub', 
                     url:'https://github.com/cealcuadrado', 
                     icon:'fa-github'
